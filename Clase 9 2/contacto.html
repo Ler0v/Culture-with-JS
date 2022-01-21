@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contacto</title>
+	<meta charset=utf-8>
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	 <link
+    	rel="stylesheet"
+    	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+
+ 	 />
+ 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+ 	<link rel="stylesheet" type="text/css" href="scss/estilos.css">
+</head>
+<body>
+	<div class="barraNavegacion">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <a class="navbar-brand" href="index.html">CULTURE</a>
+
+		  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+		    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+		      <li class="nav-item ">
+		        <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="productos.html">Productos</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="sobrenosotros.html" tabindex="-1" aria-disabled="true">Sobre Nosotros</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="preguntas.html" tabindex="-1" aria-disabled="true">Preguntas Frecuentes</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="contacto.html" tabindex="-1" aria-disabled="true">Contacto</a>
+		      </li>
+		    </ul>
+		</nav>
+  	</div>
+	<h1 class="letraEspecial">CULTURE</h1>
+	<div class="container-fluid">
+		<div class="row align-items-center about-us__container4">
+			<div class="col-md-7 about-us__titulo">
+				<h2 id="h2-aboutus" class='about-us__titulo-h1'>Contacto</h2>
+				<p class='about-us__titulo-p'>Contactanos</p>
+			</div>
+		</div>
+	</div>
+	<div>
+		<form onsubmit="enviar();return false" id="formulario" class="letraDescripcion">
+		  <div class="form-group">
+		    <label for="nombre">Nombre</label>
+		    <input type="text" class="form-control inp1" id="nombre" placeholder="Nombre">
+		</div>
+		  	<div class="form-group">
+			    <label for="apellido">Apellido</label>
+			    <input type="text" class="form-control inp2" id="apellido" placeholder="Apellido">
+			</div>
+			
+			<div class="form-group">
+			    <label for="date">Fecha de nacimiento</label>
+			    <input type="date" class="form-control" id="date" placeholder="date">
+			</div>
+			
+			<div class="form-group">
+			    <label for="email">Email</label>
+			    <input type="email" class="form-control" id="email" placeholder="Email">
+			</div>
+			<div class="form-group">
+				<label for="telefono">Telefono</label>
+				<input type="phone" class="form-control" id="telefono" placeholder="Telefono">
+			</div>
+			<div class="form-group">
+				    <label for="exampleFormControlSelect1">Genero</label>
+				    <select class="form-control" id="exampleFormControlSelect1">
+				      <option>Femenino</option>
+				      <option>Masculino</option>
+			    	</select>
+			</div>
+			<div class="form-group">
+				<label for="mensaje">Mensaje</label>
+			    <textarea class="form-control inp3" id="mensaje" rows="3"></textarea>
+			</div>
+		<button type="submit" class="btn btn-success btn-lg btn-block button">Enviar</button>
+		</form>
+	</div>
+	<div>	
+		<div class="card letraDescripcion">
+		  <div class="card-body">
+		    <h2 class="card-title typeBold">Ubicacion</h2>
+		    <p class="card-text typeLight">Actualmente podes encontrar todos nuestros productos en las oficinas de Palermo!</p>
+		    <p class="card-text"><small class="text-muted">4699 Av. Santa Fe</small></p>
+		  </div>
+		  <img src="media/mapa.png" class="card-img-bottom" alt="mapita	">
+		</div>
+	</div>
+	<div class="card text-center letraDescripcion">
+	  <div class="card-header">
+	    The Future is here
+	  </div>
+	  <div class="card-body">
+	    <h5 class="card-title">Culture</h5>
+	    <p class="card-text"></p>
+	  </div>
+	  <div class="card-footer text-muted">
+	    Culture© 2021
+	  </div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="js/wow.min.js"></script>
+	<script>
+	new WOW().init();
+	</script>
+	<script src="java/cliente.js"></script>
+	<script src="java/inputs.js"></script>
+	<script src="java/events.js"></script>
+</body>
+</html>
