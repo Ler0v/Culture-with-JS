@@ -6,103 +6,26 @@
 	<meta name=viewport content="width=device-width, initial-scale=1">
 	 <link
     	rel="stylesheet"
-    	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-
- 	 />
+    	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
  	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
  	<link rel="stylesheet" type="text/css" href="scss/estilos.css">
 </head>
 <body>
-	<div class="barraNavegacion">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-		    <span class="navbar-toggler-icon"></span>
-		  </button>
-		  <a class="navbar-brand" href="index.html">CULTURE</a>
+	
+	<div id="inicio"></div>
+	<div id="imgfrecuent"></div>
+	<div id="info"></div>
+	<div id="footer"></div>	
 
-		  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-		    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-		      <li class="nav-item ">
-		        <a class="nav-link" href="index.html">Inicio <span class="sr-only"></span></a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="productos.html">Productos</a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="sobrenosotros.html" tabindex="-1" aria-disabled="true">Sobre Nosotros</a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="preguntas.html" tabindex="-1" aria-disabled="true">Preguntas Frecuentes</a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="contacto.html" tabindex="-1" aria-disabled="true">Contacto</a>
-		      </li>
-		    </ul>
-		  </div>
-		</nav>
-  	</div>
-</head>
-<body>
-	<h1 class="letraEspecial">CULTURE</h1>
-	<section class="about-us">
-        <div class="container-fluid">
-            <div class="row align-items-center about-us__container">
-                <div class="col-md-7 about-us__titulo">
-                    <h2 id="h2-aboutus" class='about-us__titulo-h1'>Preguntas Frecuentes</h2>
-                    <p class='about-us__titulo-p'>Conocenos.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="container info" id="arrow">
-            <div class="row justify-content-center align-items-center container__info-items letraInfo">
-                <div class="col-md-5 order-0 order-md-0">
-                    <h3>¿Cuál es el costo de envío?</h3>
-                    <p>El costo de envío será mostrado en base al total de la compra y ubicación, en el checkout, en el momento previo a la compra.</p>
-                </div>
-                <div class="col-md-5 order-1 order-md-1">
-                    <img src="media/cultureind1.jpg" class="info__img" alt="doctor">
-                </div>
-            </div>
-
-            <div class="row justify-content-center align-items-center container__info-items letraInfo">
-                <div class="col-md-5 order-2 order-md-2">
-                    <img src="media/cultureind1.jpg" class="info__img" alt="doctor">
-                </div>
-                <div class="col-md-5 order-1 order-md-3">
-                    <h3>¿Dónde puedo recibir mi pedido?</h3>
-                    <p>Se hacen envios a todo el pais.</p>
-                </div>
-            </div>
-
-            <div class="row justify-content-center align-items-center container__info-items letraInfo">
-                <div class="col-md-5 order-4 order-md-4">
-                    <h3>¿Cuánto tarda en llegar el pedido?</h3>
-                    <p>El tiempo de entrega dependerá del tipo de envío seleccionado. En general la demora se encuentra entre 3 y 15 días hábiles luego de acreditado el pago.</p>
-                </div>
-                <div class="col-md-5 order-5 order-md-5">
-                    <img src="media/cultureind1.jpg" class="info__img" alt="doctor">
-                </div>
-            </div>
-        </div>
-    </section>
-	<div class="card text-center letraDescripcion">
-	  <div class="card-header">
-	    The Future is here
-	  </div>
-	  <div class="card-body">
-	    <h5 class="card-title">Culture</h5>
-	    <p class="card-text"></p>
-	  </div>
-	  <div class="card-footer text-muted">
-	    Culture© 2021
-	  </div>
-	</div>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 	<script src="js/wow.min.js"></script>
 	<script>
 	new WOW().init();
 	</script>	
+	<script src="java/index/header.js"></script>
+	<script src="java/frecuent/imgfrecuent.js"></script>
+	<script src="java/frecuent/info.js"></script>
+	<script src="java/index/footer.js"></script>
 </body>
 </html>
