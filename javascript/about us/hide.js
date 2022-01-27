@@ -1,5 +1,5 @@
 $("#boton").append(`<div>
-<button style="width: 100%;" class="btn btn-success">APRETAME</button>
+<button style="width: 100%;" class="btn btn-success">SOBRE NOSOTROS!</button>
 </div>`)
 
 $("#sobreNosotros").hide()
