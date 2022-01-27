@@ -4,7 +4,7 @@ $("#form").append(`<div>
     <label for="nombre">Nombre</label>
     <input type="text" class="form-control inp1" id="nombre" placeholder="Nombre">
 </div>
-      <div class="form-group">
+    <div class="form-group">
         <label for="apellido">Apellido</label>
         <input type="text" class="form-control inp2" id="apellido" placeholder="Apellido">
     </div>
@@ -17,7 +17,7 @@ $("#form").append(`<div>
     <div class="form-group">
         <label for="email">Email</label>
         <input type="email" class="form-control" id="email" placeholder="Email">
-    </div>
+    </div>  
     <div class="form-group">
         <label for="telefono">Telefono</label>
         <input type="phone" class="form-control" id="telefono" placeholder="Telefono">

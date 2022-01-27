@@ -27,5 +27,3 @@ $("#inicio").append(`<div class="barraNavegacion">
 </nav>
 <h1 class="letraEspecial">CULTURE</h1>
 </div>`)
-
-
