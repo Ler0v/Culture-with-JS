@@ -1,4 +1,4 @@
-$("#imgcontacto").append(`<h1 class="letraEspecial">CULTURE</h1>
+$("#imgcontacto").append(`
 <div class="container-fluid">
     <div class="row align-items-center about-us__container4">
         <div class="col-md-7 about-us__titulo">
