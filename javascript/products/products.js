@@ -40,7 +40,7 @@ productos.forEach(producto => {
     <p>${producto.nombre}</p>
     <span>${producto.precio}</span>
     <p>${producto.descripcion}</p>
-    <button class="btn btn-success">Comprar</button>
+    <button class="btn btn-success">Añadir al carrito</button>
     </div>
     </div>`
 })
