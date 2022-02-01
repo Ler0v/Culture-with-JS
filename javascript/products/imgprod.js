@@ -9,6 +9,6 @@ $("#imgprod").append(`<div id= "animado" style= "display: none" class="container
 
 $("#animado").fadeIn(5000);
 
-$("#texto1").fadeIn(3000)
+$("#texto1").fadeIn(4000)
 
-$("#texto2").fadeIn(5000)
+$("#texto2").fadeIn(7000)
