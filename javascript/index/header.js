@@ -24,6 +24,7 @@ $("#inicio").append(`<div class="barraNavegacion">
       </li>
     </ul>
   </div>
+  <button id="botonCarrito" style="border-radius: 30px; margin-right: 50px" type="button" class="btn btn-success">Ver Carrito 🛒</button>
 </nav>
 </div>`)
 
