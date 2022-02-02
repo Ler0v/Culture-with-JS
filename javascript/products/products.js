@@ -60,7 +60,7 @@ productos.forEach(producto => {
 })
 
 
-/////////modal con html listener con el modal////////
+
 
  
 
