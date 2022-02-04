@@ -528,7 +528,14 @@ textarea {
   color: white;
 }
 
-
+#carritoCompras{
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  height: 100vh;
+  width: 300px;
+  background-image: -o-linear-gradient(blue,red,pink);
+}
 
 
 

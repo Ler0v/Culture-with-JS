@@ -11,11 +11,12 @@ class Cliente{
     }
 }
 
+
+
 function edad () {
     let fecha =  document.getElementById("date").value
     let hoy = new Date()
     fecha = new Date(fecha)
-    console.log(Math.abs(hoy - fecha) / 1000 / 60 / 60 / 24 / 365)
   }
 
 
@@ -30,5 +31,4 @@ function enviar() {
     const persona1 = new Cliente(nombre, apellido, email, telefono, mensaje);
     persona1.datos();
 } 
-
 

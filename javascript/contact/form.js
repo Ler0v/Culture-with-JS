@@ -33,7 +33,7 @@ $("#form").append(`<div>
         <label for="mensaje">Mensaje</label>
         <textarea class="form-control inp3" id="mensaje" rows="3"></textarea>
     </div>
-<button type="submit" class="btn btn-success btn-lg btn-block button">Enviar</button>
+<button id="botonFormulario" type="submit" class="btn btn-success btn-lg btn-block button">Enviar</button>
 </form>
 </div>
 <div>	
