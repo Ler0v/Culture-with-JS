@@ -32,3 +32,12 @@ function enviar() {
     persona1.datos();
 } 
 
+$(document).ready(function() {
+    const URL_JSON = "data/formulario.json"
+    $("botonFormulario").click( () => {
+        $.post( URL_JSON, (respuesta) => {
+            console.log(respuesta)
+        })
+    })
+})
+    

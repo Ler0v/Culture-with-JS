@@ -60,8 +60,6 @@ productos.forEach(producto => {
 })
 
 
-let URL = "https://jsonplaceholder.typicode.com/posts"
 
-console.log(URL)
  
 
