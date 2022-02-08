@@ -22,9 +22,11 @@ $("#inicio").append(`<div class="barraNavegacion">
       <li class="nav-item">
         <a class="nav-link" href="contacto.html" tabindex="-1" aria-disabled="true">Contacto</a>
       </li>
-    </ul>
+      <li class="nav-item">
+        <a class="nav-link" href="cart.html" tabindex="-1" aria-disabled="true">Ver Carrito 🛒</a>
+      </li>
+      </ul>
   </div>
-  <button id="botonCarrito" style="border-radius: 30px; margin-right: 50px" type="button" class="btn btn-success">Ver Carrito 🛒</button>
 </nav>
 </div>`)
 

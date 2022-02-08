@@ -538,5 +538,12 @@ textarea {
 }
 
 
-
-
+.carrito{
+  text-align: center;
+  font-size: 50px;
+  height: 300px;
+  justify-content: center;
+  background-image: url('media/alambres.jpg');
+  background-position: center;
+  background-size: cover;
+}

@@ -26,7 +26,7 @@ localStorage.setItem('product', JSON.stringify(producto))
 
 //Carrito con Storage
 
-const carrito = [];
+
 
 // Inyecta las cards al documento
 const container = document.querySelector("#grid")
@@ -34,13 +34,13 @@ const container = document.querySelector("#grid")
 productos.forEach(producto => {
     container.innerHTML += `<div id="p${producto.id}" class="cardProduct">
     <div class = "imgCentrar">
-    <img src=${producto.img} width = 400px></img>
+    <img id="item-image" src=${producto.img} width = 400px></img>
     </div>
     <div class ="info">
-    <p>${producto.nombre}</p>
-    <span>${producto.precio}</span>
+    <p id= "item-title">${producto.nombre}</p>
+    <span id="item-price">${producto.precio}</span>
     <p>${producto.descripcion}</p>
-    <button class="btn btn-success">Añadir al carrito</button>
+    <button id="botonCarrito" class="btn btn-success">Añadir al carrito</button>
     </div>
     </div>`
 })
@@ -54,12 +54,35 @@ productos.forEach(producto => {
 	boton.addEventListener('click', () => {
         alert('Compraste ' + producto.nombre) //poner un modal
 		localStorage.setItem('product', JSON.stringify(producto))
-        carrito.push(producto)
-        console.log(carrito)
 	})
 })
 
 
+
+
+const addToShoppingCartButtons = document.querySelectorAll('#botonCarrito')
+addToShoppingCartButtons.forEach((addToCartButton) => {
+    addToCartButton.addEventListener('click', addToCartClicked)
+    
+})
+
+
+const shoppingCartItemsContainer = document.querySelector('shoppingCartContainer');
+
+function addToCartClicked (event) {
+    const button = event.target;
+    const item = button.closest('.cardProduct')
+    const itemTitle =  item.querySelector('#item-title').textContent
+    const itemPrice =  item.querySelector('#item-price').textContent
+    const itemImg =  item.querySelector('#item-image').src
+
+
+    addItemToShoppingCart(itemTitle, itemPrice, itemImg)
+}
+
+function addItemToShoppingCart(itemTitle, itemPrice, itemImg){
+    const shoppingCartRow = document.createElement('div')
+}
 
  
 
