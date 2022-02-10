@@ -26,7 +26,7 @@ localStorage.setItem('product', JSON.stringify(producto))
 
 //Carrito con Storage
 
-
+const carrito = [];
 
 // Inyecta las cards al documento
 const container = document.querySelector("#grid")
@@ -54,6 +54,8 @@ productos.forEach(producto => {
 	boton.addEventListener('click', () => {
         alert('Compraste ' + producto.nombre) //poner un modal
 		localStorage.setItem('product', JSON.stringify(producto))
+        carrito.push(producto)
+        console.log(carrito)
 	})
 })
 
@@ -80,9 +82,8 @@ function addToCartClicked (event) {
     addItemToShoppingCart(itemTitle, itemPrice, itemImg)
 }
 
-function addItemToShoppingCart(itemTitle, itemPrice, itemImg){
-    const shoppingCartRow = document.createElement('div')
-}
 
- 
+
+
+
 
