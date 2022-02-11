@@ -1,3 +1,8 @@
+window.addEventListener("click", function(e){
+    console.log(e.target)
+})
+
+
 // Clase plantilla para los productos
 
 class Product {
@@ -10,77 +15,80 @@ class Product {
     }
 }
 
+const productos = [];
+const carrito = []
 
-// Armar array escalable de productos
-const productos = [
-    new Product(1,"The Flex Hoddie", 7500, "El buzo perfecto para la salida perfecta", 'media/buzo1.jpeg'),
-    new Product(2, "Serpent", 8500, "Las escamas se apoderaron del estilo de este buzo", 'media/buzo2.jpeg'),
-    new Product(3, "The Careless Hoddie", 9500, "The careless hoddie", 'media/buzo3.jpeg')
-]
+const JSON_URL = "data/formulario.json" 
+
+$.getJSON( JSON_URL, (respuesta) => {
+    console.log(respuesta)
+    respuesta.forEach(element => {
+    productos.push(new Product(element.id, element.nombre, element.precio, element.descripcion, element.img))
+    });
+    console.log(productos)
+    productos.forEach(producto => {
+        container.innerHTML += `<div id="p${producto.id}" class="cardProduct">
+        <div class = "imgCentrar">
+        <img id="item-image" src=${producto.img} width = 400px></img>
+        </div>
+        <div class ="info">
+        <p id= "item-title">${producto.nombre}</p>
+        <span id="item-price">${producto.precio}</span>
+        <p>${producto.descripcion}</p>
+        <button class="cta btn btn-success ">Añadir al carrito</button>
+        </div>
+        </div>`
+    })
 
 
-//Array de productos a JSON y de ahi al storage
-
-localStorage.setItem('product', JSON.stringify(producto))
 
 
-//Carrito con Storage
+    const cerrar = document.querySelector(".close")
+    const abrir = document.querySelector(".cta")
+    const modal = document.querySelector(".modal")
+    const modalC =document.querySelector(".modal-container")
 
-const carrito = [];
+
+
+
+
+
+    productos.forEach(producto => {
+        const boton = document.querySelector(`#p${producto.id} button`)
+        boton.addEventListener('click', (e) => {
+            e.preventDefault()
+            modalC.style.opacity = "1"
+            modalC.style.visibility = "visible"
+            modal.classList.toggle("modal-close")
+            carrito.push(producto)
+            //poner un modal
+            localStorage.setItem('carrito', JSON.stringify(carrito))
+            console.log(carrito)
+        })
+        
+    })
+
+    
+});
+
+
+
+
+
+
 
 // Inyecta las cards al documento
 const container = document.querySelector("#grid")
 
-productos.forEach(producto => {
-    container.innerHTML += `<div id="p${producto.id}" class="cardProduct">
-    <div class = "imgCentrar">
-    <img id="item-image" src=${producto.img} width = 400px></img>
-    </div>
-    <div class ="info">
-    <p id= "item-title">${producto.nombre}</p>
-    <span id="item-price">${producto.precio}</span>
-    <p>${producto.descripcion}</p>
-    <button id="botonCarrito" class="btn btn-success">Añadir al carrito</button>
-    </div>
-    </div>`
-})
 
+cerrar.addEventListener("click", function(){
+    modal.classList.toggle("modal-close")
+    setTimeout(function(){
+        modalC.style.opacity = "0"
+        modalC.style.visibility = "hidden"
+    })
+},1000)
 
-// Agregar event listeners al boton de compra  agrega al carrito en el storage y lo consolea
-
-
-productos.forEach(producto => {
-	const boton = document.querySelector(`#p${producto.id} button`)
-	boton.addEventListener('click', () => {
-        alert('Compraste ' + producto.nombre) //poner un modal
-		localStorage.setItem('product', JSON.stringify(producto))
-        carrito.push(producto)
-        console.log(carrito)
-	})
-})
-
-
-
-
-const addToShoppingCartButtons = document.querySelectorAll('#botonCarrito')
-addToShoppingCartButtons.forEach((addToCartButton) => {
-    addToCartButton.addEventListener('click', addToCartClicked)
-    
-})
-
-
-const shoppingCartItemsContainer = document.querySelector('shoppingCartContainer');
-
-function addToCartClicked (event) {
-    const button = event.target;
-    const item = button.closest('.cardProduct')
-    const itemTitle =  item.querySelector('#item-title').textContent
-    const itemPrice =  item.querySelector('#item-price').textContent
-    const itemImg =  item.querySelector('#item-image').src
-
-
-    addItemToShoppingCart(itemTitle, itemPrice, itemImg)
-}
 
 
 

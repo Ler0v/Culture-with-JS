@@ -337,7 +337,9 @@ ul {
   display: -ms-grid;
   display: grid;
   min-width: 100vw;
-      grid-template-areas: "imgPreg pregunta1" "imgPreg pregunta2" "imgPreg pregunta3";
+      grid-template-areas: "imgPreg pregunta1"
+ "imgPreg pregunta2"
+ "imgPreg pregunta3";
   -ms-grid-columns: 2fr 8fr;
       grid-template-columns: 2fr 8fr;
   -ms-grid-rows: (300px)[3];
@@ -407,7 +409,12 @@ textarea {
     display: -ms-grid;
     display: grid;
     min-width: 100vw;
-        grid-template-areas: "imgPreg" "imgPreg" "imgPreg" "pregunta1" "pregunta2" "pregunta3";
+        grid-template-areas: "imgPreg"
+ "imgPreg"
+ "imgPreg"
+ "pregunta1"
+ "pregunta2"
+ "pregunta3";
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
     -ms-grid-rows: (300px)[6];
@@ -651,4 +658,55 @@ textarea {
 .letraBoton {
   color: white;
 }
+
+.modal-container{
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;;
+}
+#modal{
+  width: 40% ;
+  height: 50%;
+  background-color: transparent;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  transition: transform 1s;
+  transform: translateY(0%);
+} 
+
+.modal-close {
+  transform: translateY(-200%);
+}
+
+#modal > img{
+  height: 80%;
+  border-radius: 10%;
+}
+
+.close{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: inline-block;
+  width: 35px;
+  background: #48CA36;
+  color: white;
+  line-height: 35px;
+  cursor: pointer;
+  border-radius: 50%;
+}
 /*# sourceMappingURL=estilos.css.map */
+
+
+
+
+
+

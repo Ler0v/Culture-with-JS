@@ -1,23 +1,23 @@
 [
     {
         "id":1,
-        "producto":"The Flex Hoddie",
+        "nombre":"The Flex Hoddie",
         "precio": 7500,
         "descripcion" : "El buzo perfecto para la salida perfecta",
-        "imagen": "media/buzo1.jpeg"
+        "img": "media/buzo1.jpeg"
     },
     {
         "id":2,
-        "producto":"serpent",
+        "nombre":"serpent",
         "precio": 9500,
         "descripcion" : "Las escamas se apoderaron del estilo de este buzo",
-        "imagen": "media/buzo2.jpeg"
+        "img": "media/buzo2.jpeg"
     },
     {
         "id":3,
-        "producto":"The Careless Hoddie",
+        "nombre":"The Careless Hoddie",
         "precio": 8500,
         "descripcion" : "The careless hoddie",
-        "imagen": "media/buzo3.jpeg"
+        "img": "media/buzo3.jpeg"
     }
 ]
