@@ -691,7 +691,7 @@ textarea {
   border-radius: 10%;
 }
 
-.close{
+#close{
   position: absolute;
   top: 5px;
   right: 5px;

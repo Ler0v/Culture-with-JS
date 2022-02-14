@@ -43,13 +43,10 @@ $.getJSON( JSON_URL, (respuesta) => {
 
 
 
-    const cerrar = document.querySelector(".close")
-    const abrir = document.querySelector(".cta")
-    const modal = document.querySelector(".modal")
-    const modalC =document.querySelector(".modal-container")
+   
 
-
-
+    
+    
 
 
 
@@ -57,15 +54,12 @@ $.getJSON( JSON_URL, (respuesta) => {
         const boton = document.querySelector(`#p${producto.id} button`)
         boton.addEventListener('click', (e) => {
             e.preventDefault()
-            modalC.style.opacity = "1"
+            modalC.style.opacity = "5"
             modalC.style.visibility = "visible"
-            modal.classList.toggle("modal-close")
             carrito.push(producto)
-            //poner un modal
             localStorage.setItem('carrito', JSON.stringify(carrito))
             console.log(carrito)
         })
-        
     })
 
     
@@ -81,17 +75,19 @@ $.getJSON( JSON_URL, (respuesta) => {
 const container = document.querySelector("#grid")
 
 
+
+
+const cerrar = document.getElementById("close")
+const abrir = document.querySelector(".cta")
+const modal = document.querySelector(".modal")
+const modalC =document.querySelector(".modal-container")
+
+
+
+
 cerrar.addEventListener("click", function(){
-    modal.classList.toggle("modal-close")
     setTimeout(function(){
         modalC.style.opacity = "0"
         modalC.style.visibility = "hidden"
     })
 },1000)
-
-
-
-
-
-
-
