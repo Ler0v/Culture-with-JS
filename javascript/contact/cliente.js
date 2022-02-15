@@ -30,6 +30,27 @@ function enviar() {
 
     const persona1 = new Cliente(nombre, apellido, email, telefono, mensaje);
     persona1.datos();
+
+
+    const URLGET   = "https://jsonplaceholder.typicode.com/posts"
+
+    const infoPost =  { nombre: nombre, apellido: apellido, email: email, telefono: telefono, mensaje: mensaje }  
+
+    $("#botonFormulario").click(() => { 
+        $.post(URLGET, infoPost ,(respuesta, estado) => {
+            if(estado === "success"){
+                console.log(respuesta)
+            }  
+        });
+    });
+
+
+
+
+
+
+
+
 } 
 
 $(document).ready(function() {
@@ -41,3 +62,6 @@ $(document).ready(function() {
     })
 })
     
+
+
+

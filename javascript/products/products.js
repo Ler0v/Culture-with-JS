@@ -1,9 +1,6 @@
-window.addEventListener("click", function(e){
-    console.log(e.target)
-})
-
-
 // Clase plantilla para los productos
+
+const itemshop = document.querySelector('.carrito')
 
 class Product {
     constructor(id, nombre, precio, descripcion, img) {
@@ -25,29 +22,19 @@ $.getJSON( JSON_URL, (respuesta) => {
     respuesta.forEach(element => {
     productos.push(new Product(element.id, element.nombre, element.precio, element.descripcion, element.img))
     });
-    console.log(productos)
     productos.forEach(producto => {
         container.innerHTML += `<div id="p${producto.id}" class="cardProduct">
         <div class = "imgCentrar">
         <img id="item-image" src=${producto.img} width = 400px></img>
         </div>
         <div class ="info">
-        <p id= "item-title">${producto.nombre}</p>
+        <p id="item-title">${producto.nombre}</p>
         <span id="item-price">${producto.precio}</span>
         <p>${producto.descripcion}</p>
-        <button class="cta btn btn-success ">Añadir al carrito</button>
+        <button class="btn btn-success ">Añadir al carrito</button>
         </div>
         </div>`
     })
-
-
-
-
-   
-
-    
-    
-
 
 
     productos.forEach(producto => {
@@ -56,24 +43,23 @@ $.getJSON( JSON_URL, (respuesta) => {
             e.preventDefault()
             modalC.style.opacity = "5"
             modalC.style.visibility = "visible"
-            carrito.push(producto)
+            carrito.push({producto: producto.nombre, cantidad: 1})
             localStorage.setItem('carrito', JSON.stringify(carrito))
             console.log(carrito)
+            renderCarrito()
         })
     })
+
+
+  
+   
 
     
 });
 
 
-
-
-
-
-
 // Inyecta las cards al documento
 const container = document.querySelector("#grid")
-
 
 
 
@@ -90,4 +76,14 @@ cerrar.addEventListener("click", function(){
         modalC.style.opacity = "0"
         modalC.style.visibility = "hidden"
     })
-},1000)
+},3000)
+
+
+
+
+
+
+
+
+
+
