@@ -1,3 +1,7 @@
+ const lista = localStorage.getItem('carrito')
+
+ console.log(lista)
+
 $('#carrito').append(`<section style="background-color: #ffffffff; height: 600px" class="shopping-cart">
 <div class="container">
     <h1 class="carrito letraDescripcion" >CARRITO</h1>
@@ -6,20 +10,30 @@ $('#carrito').append(`<section style="background-color: #ffffffff; height: 600px
             <div class="shopping-cart-header">
                 <h6>Producto</h6>
             </div>
+            <td>
+                <img src=${carrito.img} class="col-6">
+            </td>
         </div>
         <div class="col-2">
             <div class="shopping-cart-header">
                 <h6 class="text-truncate">Precio</h6>
             </div>
+            <td>
+                <p class="col-4">${carrito.precio}</p>
+            </td>
         </div>
         <div class="col-4">
             <div class="shopping-cart-header">
                 <h6>Cantidad</h6>
             </div>
+            <td>
+                <p class="col-4">${carrito.id}</p>
+            </td>
         </div>
     </div>
     <!-- cart items -->
     <div class="shopping-cart-items shoppingCartItemsContainer">
+
     </div>
     <!-- finaliza -->
 
@@ -76,3 +90,4 @@ $('#carrito').append(`<section style="background-color: #ffffffff; height: 600px
 </div>
 
 </section>`)
+

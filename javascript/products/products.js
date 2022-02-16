@@ -1,7 +1,4 @@
 // Clase plantilla para los productos
-
-const itemshop = document.querySelector('.carrito')
-
 class Product {
     constructor(id, nombre, precio, descripcion, img) {
         this.id = id;
@@ -43,18 +40,11 @@ $.getJSON( JSON_URL, (respuesta) => {
             e.preventDefault()
             modalC.style.opacity = "5"
             modalC.style.visibility = "visible"
-            carrito.push({producto: producto.nombre, cantidad: 1})
+            carrito.push({id: producto.id, img: producto.img, precio: producto.precio})
             localStorage.setItem('carrito', JSON.stringify(carrito))
             console.log(carrito)
-            renderCarrito()
         })
-    })
-
-
-  
-   
-
-    
+    })  
 });
 
 
@@ -77,6 +67,7 @@ cerrar.addEventListener("click", function(){
         modalC.style.visibility = "hidden"
     })
 },3000)
+
 
 
 
