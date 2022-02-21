@@ -40,7 +40,7 @@ $.getJSON( JSON_URL, (respuesta) => {
             e.preventDefault()
             modalC.style.opacity = "5"
             modalC.style.visibility = "visible"
-            carrito.push({id: producto.id, img: producto.img, precio: producto.precio})
+            carrito.push({id: producto.id, img: producto.img, precio: producto.precio, nombre: producto.nombre})
             localStorage.setItem('carrito', JSON.stringify(carrito))
             console.log(carrito)
         })

@@ -11,23 +11,10 @@ $('#carrito').append(`<section style="background-color: #ffffffff; height: 600px
                 <h6>Producto</h6>
             </div>
         </div>
-        <div class="col-2">
-            <div class="shopping-cart-header">
-                <h6 class="text-truncate">Precio</h6>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="shopping-cart-header">
-                <h6>Cantidad</h6>
-            </div>
-            <td>
-                <p class="col-4">${carrito.id}</p>
-            </td>
-        </div>
     </div>
     <!-- cart items -->
     <div class="shopping-cart-items shoppingCartItemsContainer">
-
+        
     </div>
     <!-- finaliza -->
 
@@ -35,8 +22,6 @@ $('#carrito').append(`<section style="background-color: #ffffffff; height: 600px
     <div class="row">
         <div class="col-12">
             <div class="shopping-cart-total d-flex align-items-center">
-                <p class="mb-0">Total</p>
-                <p class="ml-4 mb-0 shoppingCartTotal">0$</p>
                 <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true"
                     data-delay="2000">
                     <div class="toast-header">
@@ -79,9 +64,22 @@ $('#carrito').append(`<section style="background-color: #ffffffff; height: 600px
         </div>
     </div>
     <!-- FIN MODAL COMPRA -->
-
-
 </div>
-
 </section>`)
 
+
+const pr = JSON.parse(lista)
+
+
+const tbody = document.querySelector(".shopping-cart-items")
+
+console.log(pr)
+
+pr.forEach(producto => {
+    tbody.innerHTML += `
+    <tr>
+        <td><p>${producto.nombre}</p></td>
+        <td><img src="${producto.img}" style="width: 200px"></td>
+        <td<p> Precio: $${producto.precio}</p></td>
+    </tr>`
+});
