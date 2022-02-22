@@ -80,6 +80,6 @@ pr.forEach(producto => {
     <tr>
         <td><p>${producto.nombre}</p></td>
         <td><img src="${producto.img}" style="width: 200px"></td>
-        <td<p> Precio: $${producto.precio}</p></td>
+        <td><p> Precio: $${producto.precio}</p></td>
     </tr>`
-});
+}); 
