@@ -24,20 +24,12 @@ $('#carrito').append(`<section style="background-color: #ffffffff; height: 600px
             <div class="shopping-cart-total d-flex align-items-center">
                 <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true"
                     data-delay="2000">
-                    <div class="toast-header">
-                        <span>✅</span>
-                        <strong class="mr-auto ml-1 text-secondary">Elemento en el carrito</strong>
-                        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="toast-body text-white">
-                        Se aumentó correctamente la cantidad
-                    </div>
                 </div>
                 <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal"
                     data-target="#comprarModal">Comprar</button>
+                <button class="btn btnVaciar btn-danger">Vaciar carrito</button>
             </div>
+        <div><h3 class="itemTotal">Total:$</h3></div>
         </div>
     </div>
 
@@ -73,6 +65,7 @@ const pr = JSON.parse(lista)
 
 const tbody = document.querySelector(".shopping-cart-items")
 
+
 console.log(pr)
 
 pr.forEach(producto => {
@@ -83,3 +76,18 @@ pr.forEach(producto => {
         <td><p> Precio: $${producto.precio}</p></td>
     </tr>`
 }); 
+ 
+
+const btnVaciar = document.querySelector('.btnVaciar')
+
+pr.forEach(producto => {
+    btnVaciar.addEventListener('click', (e) =>{
+        document.querySelector('itemTotal').remove
+    })
+})
+
+
+document.querySelector('itemTotal')
+let total = 0
+
+pr.forEach(producto)
