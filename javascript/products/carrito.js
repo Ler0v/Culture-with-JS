@@ -2,8 +2,23 @@
 
  console.log(lista)
 
-$('#carrito').append(`<section style="background-color: #ffffffff; height: 600px" class="shopping-cart">
-<div class="container">
+
+
+
+const pr = JSON.parse(lista)
+
+
+const tbody = document.querySelector(".shopping-cart-items")
+
+
+console.log(pr)
+
+
+
+function generarCarrito () {
+    let montoTotal = 0;
+    let carrito = `<section style="background-color: #ffffffff; height: 600px" class="shopping-cart">
+    <div class="container">
     <h1 class="carrito letraDescripcion" >CARRITO</h1>
     <div class="row">
         <div class="col-6">
@@ -12,10 +27,19 @@ $('#carrito').append(`<section style="background-color: #ffffffff; height: 600px
             </div>
         </div>
     </div>
-    <!-- cart items -->
-    <div class="shopping-cart-items shoppingCartItemsContainer">
-        
-    </div>
+        <!-- cart items -->
+        <div class="shopping-cart-items shoppingCartItemsContainer">`
+    pr.forEach(producto => {
+        carrito += `
+        <tr>
+            <td><p>${producto.nombre}</p></td>
+            <td><img src="${producto.img}" style="width: 200px"></td>
+            <td><p> Precio: $${producto.precio}</p></td>
+        </tr>`
+        montoTotal += producto.precio;
+
+    }); 
+    carrito += `</div>
     <!-- finaliza -->
 
     <!-- total -->
@@ -27,9 +51,9 @@ $('#carrito').append(`<section style="background-color: #ffffffff; height: 600px
                 </div>
                 <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal"
                     data-target="#comprarModal">Comprar</button>
-                <button class="btn btnVaciar btn-danger">Vaciar carrito</button>
+                <button id="btnVaciar" class="btn  btn-danger">Vaciar carrito</button>
             </div>
-        <div><h3 class="itemTotal">Total:$</h3></div>
+        <div><h3 class="totalCompra">Total:${montoTotal}$</h3></div>
         </div>
     </div>
 
@@ -57,37 +81,35 @@ $('#carrito').append(`<section style="background-color: #ffffffff; height: 600px
     </div>
     <!-- FIN MODAL COMPRA -->
 </div>
-</section>`)
+</section>`
+document.getElementById('carrito').innerHTML= carrito
+}
 
 
-const pr = JSON.parse(lista)
+function vaciarCarrito () {
+        localStorage.removeItem('carrito')
+        let montoTotal = 0
+        let carritoVacio = `<div class="container">
+        <h1 class="carrito letraDescripcion" >CARRITO</h1>
+        <div class="row">
+            <div class="col-6">
+                <div class="shopping-cart-header">
+                    <h6>No hay productos</h6>
+                </div>
+            </div>
+        </div>
+        <div><h3 class="totalCompra">Total:${montoTotal}$</h3></div>
+        </div>`;
+        if (document.getElementById('carrito')){
+            document.getElementById('carrito').innerHTML= carritoVacio
+        }
+    }
 
 
-const tbody = document.querySelector(".shopping-cart-items")
 
+generarCarrito()
 
-console.log(pr)
-
-pr.forEach(producto => {
-    tbody.innerHTML += `
-    <tr>
-        <td><p>${producto.nombre}</p></td>
-        <td><img src="${producto.img}" style="width: 200px"></td>
-        <td><p> Precio: $${producto.precio}</p></td>
-    </tr>`
-}); 
- 
-
-const btnVaciar = document.querySelector('.btnVaciar')
-
-pr.forEach(producto => {
-    btnVaciar.addEventListener('click', (e) =>{
-        document.querySelector('itemTotal').remove
-    })
+$('#btnVaciar').click(() => {
+    vaciarCarrito();
 })
 
-
-document.querySelector('itemTotal')
-let total = 0
-
-pr.forEach(producto)
